@@ -17,3 +17,5 @@ match choice:
         second_func.avg_age_output(df)
     case 3:
         third_func.gender_count_output(df)
+    default:
+        st.write("Вы не выбрали действие!")
