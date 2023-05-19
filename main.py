@@ -14,5 +14,5 @@ choice = 1
 
 if choice == 1: first_func.avg_price_output(df)
 if choice == 2: second_func.avg_age_output(df)
-if: third_func.gender_count_output(df)
+if choice == 3: third_func.gender_count_output(df)
 
