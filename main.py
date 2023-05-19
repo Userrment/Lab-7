@@ -11,11 +11,8 @@ st.title("Лабораторная работа 7\nКоманда: Дударе�
 choice_list: list[int] = [1, 2, 3]
 choice: int = st.selectbox("Выберите номер задания: ", choice_list)
 choice = 1
- 
-match choice:
-    case 1:
-        first_func.avg_price_output(df)
-    case 2:
-        second_func.avg_age_output(df)
-    case 3:
-        third_func.gender_count_output(df)
+
+if choice == 1: first_func.avg_price_output(df)
+elif choice == 2: second_func.avg_age_output(df)
+else: third_func.gender_count_output(df)
+
