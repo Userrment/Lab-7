@@ -10,13 +10,12 @@ def avg_price_output(df: pd.DataFrame) -> None:
 
     text: str = "Средняя цена билета по категории — "
     choice: int
-
-    match is_alive:
-        case "Не спасшиеся пассажиры":
-            text += f"\"{choice_list[0]}\""
-            choice = 0
-        case "Выжившие пассажиры":
-            text += f"\"{choice_list[1]}\""
-            choice = 1
+    
+    if is_alive == "Не спасшиеся пассажиры":
+        text += f"\"{choice_list[0]}\""
+        choice = 0
+    elif is_alive == "Выжившие пассажиры":
+        text += f"\"{choice_list[1]}\""
+        choice = 1
     
     st.write(f"{text}: {round(avg_price(choice, df), 4)}")
