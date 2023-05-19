@@ -21,4 +21,5 @@ def avg_age_output(df: pd.DataFrame) -> None:
         text += f"\"{choice_list[2]}\""
         choice = 3
     
-    st.write(f"{text}: {round(avg_age(choice, df), 4)}")
+    st.write(f"{text}:")
+    st.write(f"{round(avg_age(choice, df), 4)}")
