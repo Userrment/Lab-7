@@ -10,16 +10,15 @@ def avg_age_output(df: pd.DataFrame) -> None:
 
     text: str = "Средний возраст по классам пассажиров — "
     choice: int
-
-    match pass_class:
-        case "Класс 1":
-            text += f"\"{choice_list[0]}\""
-            choice = 1
-        case "Класс 2":
-            text += f"\"{choice_list[1]}\""
-            choice = 2
-        case "Класс 3":
-            text += f"\"{choice_list[2]}\""
-            choice = 3
+    
+    if pass_class == "Класс 1":
+        text += f"\"{choice_list[0]}\""
+        choice = 1
+    elif pass_class == "Класс 2":
+        text += f"\"{choice_list[1]}\""
+        choice = 2
+    elif pass_class == "Класс 3":
+        text += f"\"{choice_list[2]}\""
+        choice = 3
     
     st.write(f"{text}: {round(avg_age(choice, df), 4)}")
