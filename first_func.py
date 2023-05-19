@@ -19,4 +19,4 @@ def avg_price_output(df: pd.DataFrame) -> None:
         choice = 1
     
     st.write(f"{text}:")
-    st.write(round(avg_price(choice, df), 4))
+    st.write(f"{round(avg_price(choice, df), 4)}")
