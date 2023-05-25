@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+
 def gender_count(choice: int, df: pd.DataFrame):
     return df.query(f'Pclass == {choice}').groupby('Sex')['Sex'].count()
+
 
 def gender_count_output(df: pd.DataFrame) -> None:
     choice_list: list[str] = ["Класс 1", "Класс 2", "Класс 3"]
@@ -10,7 +12,7 @@ def gender_count_output(df: pd.DataFrame) -> None:
 
     text: str = "Количество пассажиров по классам — "
     choice: int
-    
+
     if pass_class == "Класс 1":
         text += f"\"{choice_list[0]}\""
         choice = 1
@@ -27,8 +29,10 @@ def gender_count_output(df: pd.DataFrame) -> None:
 
     for col_name, item in df_slice.items():
         gender: str
-        
-        if col_name == "female": gender = "Женщины"
-        elif col_name == "male": gender = "Мужчины"
+
+        if col_name == "female":
+            gender = "Женщины"
+        elif col_name == "male":
+            gender = "Мужчины"
 
         st.write(f"{gender} — {item}")
